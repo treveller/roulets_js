@@ -1,0 +1,29 @@
+<meta charset = "UTF-8">
+<script type="text/javascript">
+	var arr = [];
+	var tmp = 0;
+	var red = 0;
+	var red1 = 0;
+	for (var i = 0; i < 1000000; i++) {
+		tmp = Math.round(Math.random() * 36);
+		if (tmp == 0) {
+			arr.push(0);
+		} else if (tmp % 2 == 0) {
+			arr.push(1);
+		} else {
+			arr.push(-1);
+		}
+	}
+	alert(arr);
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] == 1) {
+			red1++;
+		} else {
+			if (red1 > red) {
+				red = red1;
+			}
+			red1 = 0;
+		}
+	}
+	alert(red);
+</script>
